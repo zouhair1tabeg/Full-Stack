@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apple Style Navbar</title>
+  <link rel="stylesheet" href="navbar-apple.css">
+</head>
+<body>
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-image: url(https://i.pinimg.com/736x/b9/0c/fc/b90cfc7ee07a989b26176861acd9955e.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+    }
+
+    .nav-apple {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f8f8f8;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .nav-apple .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px; /* Adjust the space between the logo and title */
+    }
+
+    .nav-apple .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .nav-apple ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-apple a {
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+    }
+
+    .nav-apple a:hover {
+      color: #007aff;
+    }
+
+    @media (max-width: 600px) {
+      .nav-apple ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+      }
+    }
+
+  </style>
+  <nav class="nav-apple">
+    <div class="logo-container">
+      <img src="https://w7.pngwing.com/pngs/684/943/png-transparent-apple-logo-computer-icons-apple-logo-heart-logo-computer-wallpaper-thumbnail.png" alt="Apple Logo" width="30px">
+      <div class="logo">Apple</div>
+    </div>
+    <ul>
+      <li><a href="#">Mac</a></li>
+      <li><a href="#">iPad</a></li>
+      <li><a href="#">iPhone</a></li>
+      <li><a href="#">Watch</a></li>
+      <li><a href="#">Support</a></li>
+    </ul>
+  </nav>
+</body>
+</html>

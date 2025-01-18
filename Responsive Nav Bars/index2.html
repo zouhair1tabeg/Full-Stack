@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar2</title>
+    <script src="https://kit.fontawesome.com/f4b4a0e575.js" crossorigin="anonymous"></script>
+
+    <Style>
+        *{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            padding:0;
+            margin: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+
+        }
+        body{
+            height: 100vh;
+            width: 100%;
+            background-image: url("https://images.pexels.com/photos/1366957/pexels-photo-1366957.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+            background-size: cover;
+            background-position: center;
+        }
+        .navdiv{
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-right: 10%;
+            margin-left: 10%;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .logo a{
+            color: white;
+            font-size: 35px;
+            font-weight: 600;
+        }
+        span{
+            color: red;
+            font-size: 35px;
+            font-weight: 600;
+        }
+        .navdiv li{
+            list-style: none;
+            display: inline-block;
+        }
+        .navdiv li a{
+            color: white;
+            font-size: 18px;
+            margin-right: 15px;
+        }
+        button{
+            background-color: red;
+            color: white;
+            width: 90px;
+            padding: 10px;
+            border-radius: 20px;
+            font-size: 15px;
+            cursor: pointer;
+
+        }
+        li a:hover{
+            color: red;
+        }
+        button:hover{
+           
+            transform: scale(1.08);
+
+        }
+        .togglebtn{
+            color: white;
+            font-size: 1.5rem;
+            display: none;
+            cursor: pointer;
+
+        }
+        .togglebtn:hover{
+            color: red;
+        }
+        .dropdown-menu{
+            position: absolute;
+            right: 4rem;
+            top: 80px;
+            height: 0;
+            width: 300px;
+            background:rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            backdrop-filter: blur(15px);
+            overflow: hidden;
+            transition: height .9s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+        }
+        .dropdown-menu.open{
+            height: 300px;
+        }
+        .dropdown-menu li{
+            display: flex;
+            justify-content: center;
+            padding: 0.7rem;
+            list-style: none;
+
+        }
+        .dropdown-menu li a{
+            color: white;
+            font-size: 18px;
+        }
+        .dropdown-menu li a:hover{
+            color: red;
+        }
+        .fa-xmark{
+            color: white;
+            font-size: 1.5rem;
+            
+        }
+
+        /*Responsive*/
+
+        @media (max-width:1000px){
+            .navdiv li,
+            .navdiv button
+            {
+                display: none;
+            }
+            .togglebtn{
+                display:block;
+            }
+        }
+
+        @media (max-width:570px){
+
+            .dropdown-menu{
+                left: 2rem;
+                width: unset;
+            }
+            
+
+        }
+
+
+
+    </Style>
+</head>
+<body>
+
+        <div class="navdiv">
+            <div class="logo"><a href="#">Jhon <span>Doe</span></a></div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Service</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contactus</a></li>
+            </ul>
+            <button>Subscribe</button>
+            <div class="togglebtn">
+                <i class="fa-solid fa-bars" ></i>
+            </div>
+        </div>
+
+        <div class="dropdown-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contactus</a></li>
+            <li><button>Subscribe</button></li>
+        </div>
+    
+
+        <script>
+            const togglebtn=document.querySelector('.togglebtn')
+            const togglebtn_icon=document.querySelector('.togglebtn i')
+            const dropdown=document.querySelector('.dropdown-menu')
+
+            togglebtn.onclick=function(){
+                dropdown.classList.toggle('open')
+                const isopen=dropdown.classList.contains('open')
+                toggleBtn_icon.classList=isopen
+                ?'fa-solid fa-xmark'
+                :'fa-solid fa-bars'
+            }
+        </script>
+</body>
+</html>

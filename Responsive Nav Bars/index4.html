@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/f4b4a0e575.js" crossorigin="anonymous"></script>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-decoration: none;
+
+    }
+    body{
+        height: 100vh;
+        width: 100%;
+        background-image: url("images/lamborghini-urus-7680x4320-18434.jpg");
+        background-position: center;
+        background-size: cover;
+        
+        
+    }
+    .navdiv{
+        height: 100px;
+        margin-left: 5%;
+        margin-right: 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .navdiv ul{
+        list-style: none;
+        display: flex;
+        margin-left: auto; 
+
+    }
+    .navdiv li{
+        display: inline-block;
+    }
+    .navdiv li a{
+        margin-left: 15px;
+        color: white;
+        font-size: 18px;
+    }
+
+    li a:hover{
+        color: red;
+    }
+    .logo a{
+        color: red;
+        font-size: 35px;
+        font-weight: 600;
+    }
+    .fa-bars{
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+        display: none;
+    }
+    .fa-bars:hover{
+        color: red;
+    }
+    .fa-xmark{
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    .fa-xmark:hover{
+        color: red;
+    }
+
+
+    .dropdown-menu{
+        position: absolute;
+        right: 2rem;
+        top: 80px;
+        height: 0;
+        width: 300px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        list-style: none;
+        backdrop-filter: blur(15px);
+        overflow: hidden;
+        transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .dropdown-menu.open{
+
+        height: 190px;
+    }
+    .dropdown-menu li{
+        display: flex;
+        justify-content: center;
+        padding: 0.7rem;
+        font-size: 18px;
+        align-items: center;
+
+    }
+    .dropdown-menu li a{
+        color: white;
+    }
+    .dropdown-menu li a:hover{
+        color: red;
+    }
+    
+
+    
+    /*responsive*/
+
+    @media (max-width:970px){
+        .navdiv li{
+            display: none;
+        }
+        .fa-bars{
+            display: block;
+        }
+        .dropdown-menu{
+            display: block;
+        }
+    }
+
+    @media (max-width:570px){
+
+        .dropdown-menu{
+            left: 2rem;
+            width: unset;
+        }
+       
+        
+    }
+
+    
+
+    
+</style>
+    
+</head>
+<body>
+        <div class="navdiv">
+            <div class="logo"><a href="#">Eletic</a></div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Service</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+            <div class="togglebtn">
+                <i class="fa-solid fa-bars" ></i>
+
+            </div>
+        </div>
+
+        <div class="dropdown-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">Contact us</a></li>
+        </div>
+
+
+
+        <script>
+            const toggleBtn=document.querySelector('.togglebtn')
+            const toggleBtn_icon=document.querySelector('.togglebtn i')
+            const dropdown=document.querySelector('.dropdown-menu')
+
+            toggleBtn.onclick=function(){
+                dropdown.classList.toggle('open')
+                const isopen=dropdown.classList.contains('open')
+
+                toggleBtn_icon.classList=isopen
+                ?'fa-solid fa-xmark'
+                :'fa-solid fa-bars'
+            }
+        </script>
+</body>
+</html>

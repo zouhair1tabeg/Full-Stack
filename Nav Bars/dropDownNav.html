@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Menu - Modeste Style</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm9SL-pzjqMwE8zl-6BkKPCJn32ufOox3Q6q4TC8dMEaNPCV3OSotjuHU&s);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        .nav {
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+        ul li {
+            position: relative;
+        }
+        a {
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 5px 10px;
+            transition: background-color 0.2s ease;
+        }
+        a:hover {
+            background-color: #e0e0e0;
+            border-radius: 3px;
+        }
+        /* Dropdown menu */
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            display: none;
+            flex-direction: column;
+            min-width: 150px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+        .dropdown a {
+            padding: 8px 10px;
+            font-size: 13px;
+            color: #555;
+        }
+        .dropdown a:hover {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        /* Show dropdown on hover */
+        li:hover .dropdown {
+            display: flex;
+        }
+        /* Search bar */
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        #search {
+            padding: 5px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        .btn {
+            padding: 5px 10px;
+            font-size: 14px;
+            background-color: #ddd;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .btn:hover {
+            background-color: #bbb;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li>
+                <a href="#">Languages</a>
+                <div class="dropdown">
+                    <a href="#">HTML</a>
+                    <a href="#">CSS</a>
+                    <a href="#">JavaScript</a>
+                    <a href="#">Kotlin</a>
+                </div>
+            </li>
+            <li>
+                <a href="#">Services</a>
+                <div class="dropdown">
+                    <a href="#">Web Design</a>
+                    <a href="#">App Development</a>
+                </div>
+            </li>
+            <li><a href="#">About Us</a></li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Search...">
+            <input type="button" value="Search" class="btn">
+        </div>
+    </div>
+</body>
+</html>
